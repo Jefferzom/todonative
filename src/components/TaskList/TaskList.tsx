@@ -45,12 +45,6 @@ const TaskList = () => {
     setNewTaskTitle('');
     Alert.alert("Sucesso", "Tarefa salva com sucesso!")
 
-    try {
-      await AsyncStorage.setItem("post_task", newTaskTitle)
-    } catch (e) {
-      Alert(e);
-    }
-
   }
 
 
@@ -78,6 +72,7 @@ const TaskList = () => {
             placeholder="Faça seu to.do"
             onChangeText={text => setNewTaskTitle(text)}
             value={newTaskTitle}
+            multiline={true}
           />
           <TaskButton
             onPress={handleCreateNewTask}

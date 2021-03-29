@@ -53,7 +53,7 @@ export const TaskButton:any = styled.TouchableOpacity`
 `
 
 export const TaskInput:any = styled.TextInput`
-  font-size: 18px;
+  font-size: 25px;
   font-family: 'Poppins-Regular';
   width: 85%;
 
