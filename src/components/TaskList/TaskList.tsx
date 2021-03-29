@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   TaskContainer,
   TaskGroup,
@@ -8,7 +8,7 @@ import {
   TaskInput,
   TaskBody
 } from './styles';
-import { View, Text, TouchableOpacity, StyleSheet, TouchableWithoutFeedback, Keyboard, Alert } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, TouchableWithoutFeedback, Keyboard } from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
 
 import AsyncStorage from '@react-native-community/async-storage';
@@ -28,6 +28,7 @@ interface Task {
 const TaskList = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState('');
+  const [saveTask, SetSaveTask] = useState<Task[]>([]);
 
   async function handleCreateNewTask() {
 
@@ -40,12 +41,11 @@ const TaskList = () => {
     }
 
     setTasks(oldState => [...oldState, newTask])
-
     Keyboard.dismiss();
     setNewTaskTitle('');
-    Alert.alert("Sucesso", "Tarefa salva com sucesso!")
 
   }
+
 
 
   function handleToggleTaskCompletion(id: number) {
@@ -66,13 +66,16 @@ const TaskList = () => {
   return (
     <TaskContainer>
       <TaskGroup>
-        <TaskTitle>Minhas tasks</TaskTitle>
+        <TaskTitle>Minhas <Text style={styles.tarefa}>tasks</Text></TaskTitle>
         <TaskBox>
           <TaskInput
             placeholder="Faça seu to.do"
             onChangeText={text => setNewTaskTitle(text)}
             value={newTaskTitle}
             multiline={true}
+            spellCheck={false}
+            autoCorrect={false}
+
           />
           <TaskButton
             onPress={handleCreateNewTask}
@@ -82,14 +85,17 @@ const TaskList = () => {
         </TaskBox>
         <TaskBody>
           {tasks.map(task => (
+
             <View key={task.id}>
 
               <View style={styles.containerTask}>
 
-                <TouchableWithoutFeedback>
+                <TouchableWithoutFeedback
+                >
                   <CheckBox
                     onChange={() => handleToggleTaskCompletion(task.id)}
                     value={task.isComplete}
+
                   />
 
                 </TouchableWithoutFeedback>
@@ -98,22 +104,21 @@ const TaskList = () => {
                   style={{
                     textDecorationLine: task.isComplete ? 'line-through' : 'none',
                     color: task.isComplete ? 'grey' : 'black',
-                    fontSize: 18,
+                    fontSize: 18.9,
                   }}
                 >
                   {task.title}
                 </Text>
+
                 <TouchableOpacity
                   onPress={() => handleRemoveTask(task.id)}>
-                  <Trash style={styles.trash} width="18" height="18" />
+                  <Trash style={styles.trash} width="20" height="20" />
                 </TouchableOpacity>
 
               </View>
 
             </View>
           ))}
-
-
         </TaskBody>
       </TaskGroup>
     </TaskContainer >
@@ -130,8 +135,13 @@ const styles = StyleSheet.create({
     borderBottomColor: '#A09CB1',
   },
   trash: {
-    marginLeft: 20,
+    marginLeft: 0,
   },
+  tarefa: {
+    fontWeight: 'bold',
+    color: '#3052db',
+    fontSize: 38,
+  }
 })
 
 export default TaskList;
