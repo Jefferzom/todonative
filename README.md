@@ -1,5 +1,7 @@
 # To.do - Minhas tasks 📝
-<p align="center"><img align="center" src="https://i.imgur.com/vRqmHvYm.png?1"/></p>
+[![Watch the video](https://imgur.com/vRqmHvY)](https://youtu.be/Ln95-sJcdBc)
+
+
 <i>Mais um projeto, agora em ReactNative⚛️♥</i>
 
 > Status do Projeto: Concluído :heavy_check_mark:
