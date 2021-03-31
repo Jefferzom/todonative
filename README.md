@@ -10,7 +10,7 @@
 
 ## Objetivo do Projeto:
 <i>Criar um aplicativo onde salvamos nossas tarefas do dia.</i>
-<li>Criar, Deletar, Listar e Salvar em memória local, usando<strong>useEffect</strong> para puxar as <strong>Tasks</strong> salvas </li>
+<li>Criar, Deletar, Listar e Salvar em memória local, usando <strong>useEffect</strong> para puxar as <strong>Tasks</strong> salvas </li>
 
 ### Pré-requisitos
 
