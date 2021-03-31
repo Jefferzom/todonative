@@ -24,7 +24,7 @@ export const TaskGroup:any = styled.View`
   border-bottom-right-radius: 16px;
 
   padding: 15px 12px;
-  margin-top: -35;
+  margin-top: -35px;
 `
 
 export const TaskBox:any = styled.View`
@@ -49,7 +49,7 @@ export const TaskButton:any = styled.TouchableOpacity`
 
   background: #42f5c5;
   padding: 6px;
-  elevation: 5px;
+  elevation: 5;
 `
 
 export const TaskInput:any = styled.TextInput`

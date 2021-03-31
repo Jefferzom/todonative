@@ -28,7 +28,30 @@ interface Task {
 const TaskList = () => {
   const [tasks, setTasks] = useState<Task[]>([]);
   const [newTaskTitle, setNewTaskTitle] = useState('');
-  const [saveTask, SetSaveTask] = useState<Task[]>([]);
+
+  // Buscando Tasks salva.
+  useEffect(() => {
+    async function loadTasks() {
+      const taskStorage = await AsyncStorage.getItem('@task');
+
+      if (taskStorage) {
+        setTasks(JSON.parse(taskStorage));
+      }
+    }
+
+    loadTasks();
+  }, [])
+
+
+  //Salvando Tasks
+  useEffect(() => {
+    async function saveTasks() {
+      await AsyncStorage.setItem('@task', JSON.stringify(tasks));
+    }
+
+    saveTasks();
+  }, [tasks])
+
 
   async function handleCreateNewTask() {
 
@@ -57,10 +80,12 @@ const TaskList = () => {
     setTasks(newTasks);
   }
 
-  function handleRemoveTask(id: number) {
+  async function handleRemoveTask(id: number) {
     const filtrededTasks = tasks.filter(task => task.id !== id);
 
     setTasks(filtrededTasks);
+
+    await AsyncStorage.removeItem('@task');
   }
 
   return (
@@ -135,7 +160,7 @@ const styles = StyleSheet.create({
     borderBottomColor: '#A09CB1',
   },
   trash: {
-    marginLeft: 0,
+    marginLeft: 5,
   },
   tarefa: {
     fontWeight: 'bold',
