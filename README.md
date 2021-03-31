@@ -6,15 +6,19 @@
 
 ## Objetivo do Projeto:
 <i>Criar um aplicativo onde salvamos nossas tarefas do dia.</i>
-<li>Criar, Deletar, Listar e Salvar em memória local, usando <strong>useEffect</strong> para puxar as <strong>Tasks</strong> salvas </li>
+<li>Criar, Deletar, Listar e Salvar em memória local,usando<strong>useEffect</strong>para puxar as <strong>Tasks</strong> salvas </li>
 
 ### Pré-requisitos
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com). 
+
+[Git](https://git-scm.com) |
+[VSCode](https://code.visualstudio.com/) |
+[Android Studio](https://developer.android.com/studio?hl=pt) 
+
 Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com/) | [Android Studio](https://developer.android.com/studio?hl=pt) | [Xcode]() para quem tem MACOS.
 
-Este projeto foi feito em [React Native CLI](https://reactnative.dev/docs/environment-setup)
+### Este projeto foi feito em [React Native CLI](https://reactnative.dev/docs/environment-setup)
 
 - Para quem usa Android Studio.
 
@@ -37,7 +41,7 @@ $ git clone <https://github.com/Jefferzom/todonative.git>
   <li><a href="https://www.typescriptlang.org/">Typescript</a></li>
   <li><a href="https://styled-components.com/">Styled Components</a></li>
   <li><a href="https://github.com/kristerkari/react-native-svg-transformer">React Native SVG Transformer</a></li>
-  <li><a href="https://reactnative.dev/docs/asyncstorage">AsyncStorage</a></li>
+  <li><a href="https://reactnative.dev/docs/asyncstorage">AsyncStorage🚧</a></li>
 </ul>
 
 ### Autor
