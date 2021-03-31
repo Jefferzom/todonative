@@ -1,5 +1,7 @@
 # To.do - Minhas tasks 📝
-[![Watch the video](https://imgur.com/vRqmHvY)](https://youtu.be/Ln95-sJcdBc)
+<a href="https://imgur.com/vRqmHvY"><img src="https://i.imgur.com/vRqmHvYm.png?1" title="source: imgur.com" /></a>
+
+#### Link do vídeo da Aplicação [TO.DO](https://youtu.be/Ln95-sJcdBc) 
 
 
 <i>Mais um projeto, agora em ReactNative⚛️♥</i>
